@@ -8,7 +8,7 @@ Se ejecutan automáticamente:
 
 import pytest
 
-from app import saludar, piropear, edad_de_perro
+from app import saludar, piropear, edad_de_perro, despedir
 
 
 def test_saludar_incluye_el_nombre():
@@ -39,4 +39,10 @@ def test_edad_de_perro_negativa_lanza_error():
 
 # EJERCICIO: cuando añadas la función despedir(nombre) en app.py
 # añade aqui su test siguiendo el mismo patrón que los de arriba
+def test_despedir_incluye_el_nombre():
+    resultado = despedir("Alex")    
+    assert "Adios, Alex Que los semaforos siempre esten a tu favor" == resultado
 
+def test_despedir_con_nombre_vacio_usa_desconocido():
+    resultado = despedir("")
+    assert "Adios, desconocido Que los semaforos siempre esten a tu favor" == resultado
