@@ -52,6 +52,10 @@ def edad_de_perro(anios_humanos: int) -> int:
 
 # 👉 EJERCICIO: aquí falta una función `despedir(nombre)`.
 # Sigue las instrucciones de EJERCICIO.md para añadirla en tu propia rama.
+def despedir(nombre: str) -> str:
+    if not nombre:
+        nombre = "desconocido"
+    return f"Adios, {nombre} Que los semaforos siempre esten a tu favor"
 
 
 def menu() -> None:
@@ -60,6 +64,7 @@ def menu() -> None:
     print(saludar(nombre))
     print(piropear(nombre))
     print(f"En años de perro, 30 años son {edad_de_perro(30)} años de perro.")
+    print(despedir(nombre))
 
 
 if __name__ == "__main__":
